@@ -10,6 +10,8 @@ const TypeDefs = [
       root: String
     }
   `,
+
+  // ...Import Schemas
   CommonSchema,
   AdminSchema
 ]

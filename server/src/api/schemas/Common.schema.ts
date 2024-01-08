@@ -2,8 +2,7 @@ export const CommonSchema = /* GraphQL */ `
   type Mutation {
     login(input: LoginInput!): LoginPayload!
     register(input: RegisterInput!): RegisterPayload!
-
-    refreshToken: String!
+    refreshToken(refreshToken: String!): RefreshTokenPayload!
   }
 
   # Login
@@ -13,6 +12,7 @@ export const CommonSchema = /* GraphQL */ `
   }
   type LoginPayload {
     accessToken: String!
+    refreshToken: String!
     user: User!
   }
 
@@ -24,6 +24,11 @@ export const CommonSchema = /* GraphQL */ `
   }
   type RegisterPayload {
     user: User!
+  }
+
+  # Refresh Token
+  type RefreshTokenPayload {
+    accessToken: String!
   }
 
   type User {
